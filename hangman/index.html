@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman - Ultimate Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Difficulty Selection Screen -->
+        <div id="menu-screen" class="screen active">
+            <h1 class="game-title">HANGMAN</h1>
+            <p class="subtitle">Choose your challenge</p>
+
+            <div class="difficulty-buttons">
+                <button class="btn difficulty-btn" data-level="easy">
+                    <span class="btn-icon">🟢</span>
+                    <span class="btn-text">Easy</span>
+                </button>
+                <button class="btn difficulty-btn" data-level="medium">
+                    <span class="btn-icon">🟡</span>
+                    <span class="btn-text">Medium</span>
+                </button>
+                <button class="btn difficulty-btn" data-level="hard">
+                    <span class="btn-icon">🔴</span>
+                    <span class="btn-text">Hard</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <header class="game-header">
+                <button id="back-btn" class="icon-btn" aria-label="Back to Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m12 19-7-7 7-7" />
+                        <path d="M19 12H5" />
+                    </svg>
+                </button>
+                <div class="score-board">
+                    <span>Level: <strong id="current-level-display">Easy</strong></span>
+                    <span>Lives: <strong id="lives-display">6</strong></span>
+                </div>
+            </header>
+
+            <div class="game-content">
+                <div class="hangman-container">
+                    <!-- SVG for Hangman Drawing -->
+                    <svg height="250" width="200" class="hangman-svg">
+                        <!-- Gallows -->
+                        <line x1="20" y1="230" x2="180" y2="230" class="draw-part gallows" />
+                        <line x1="100" y1="230" x2="100" y2="20" class="draw-part gallows" />
+                        <line x1="100" y1="20" x2="140" y2="20" class="draw-part gallows" />
+                        <line x1="140" y1="20" x2="140" y2="50" class="draw-part gallows" />
+
+                        <!-- Body Parts (Initially Hidden) -->
+                        <circle cx="140" cy="70" r="20" class="draw-part body-part head" id="part-0" />
+                        <line x1="140" y1="90" x2="140" y2="150" class="draw-part body-part torso" id="part-1" />
+                        <line x1="140" y1="100" x2="110" y2="130" class="draw-part body-part arm-l" id="part-2" />
+                        <line x1="140" y1="100" x2="170" y2="130" class="draw-part body-part arm-r" id="part-3" />
+                        <line x1="140" y1="150" x2="120" y2="190" class="draw-part body-part leg-l" id="part-4" />
+                        <line x1="140" y1="150" x2="160" y2="190" class="draw-part body-part leg-r" id="part-5" />
+                    </svg>
+                </div>
+
+                <div id="word-display" class="word-display">
+                    <!-- Letters will be injected here -->
+                </div>
+
+                <div id="status-message" class="status-message"></div>
+            </div>
+
+            <div id="keyboard" class="keyboard">
+                <!-- Keyboard keys will be injected here -->
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div class="modal">
+                <h2 id="modal-title">Game Over</h2>
+                <p id="modal-message">The word was: <span id="modal-word"></span></p>
+                <button id="play-again-btn" class="btn primary-btn">Play Again</button>
+                <button id="modal-menu-btn" class="btn secondary-btn">Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
