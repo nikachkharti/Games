@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Battleship</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="game-header">
+            <h1 class="glitch" data-text="BATTLESHIP">BATTLESHIP</h1>
+            <div class="game-status" id="game-status">SYSTEM READY. AWAITING ORDERS.</div>
+        </header>
+
+        <main class="game-area">
+            <div class="boards-container">
+                <div class="board-wrapper">
+                    <h2 class="board-title">FRIENDLY WATERS</h2>
+                    <div class="game-board" id="player-board"></div>
+                </div>
+
+                <div class="board-wrapper">
+                    <h2 class="board-title">ENEMY SECTOR</h2>
+                    <div class="game-board" id="computer-board"></div>
+                </div>
+            </div>
+
+            <div class="controls-area">
+                <div class="ship-selector" id="ship-selector">
+                    <h3>DEPLOY FLEET</h3>
+                    <div class="ships-dock" id="ships-dock">
+                        <!-- Ships will be generated here -->
+                    </div>
+                    <div class="placement-controls">
+                        <button id="rotate-btn" class="btn secondary">ROTATE AXIS [R]</button>
+                        <button id="randomize-btn" class="btn secondary">AUTO DEPLOY</button>
+                    </div>
+                </div>
+
+                <div class="action-controls">
+                    <button id="start-btn" class="btn primary" disabled>ENGAGE ENEMY</button>
+                    <button id="reset-btn" class="btn danger">SYSTEM RESET</button>
+                </div>
+            </div>
+        </main>
+
+        <div class="scan-line"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
