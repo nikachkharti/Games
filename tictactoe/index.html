@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <h1 class="title">Tic Tac Toe</h1>
+
+        <div class="status-container">
+            <div class="player-turn active" id="turn-x">
+                <span class="player-icon">X</span>
+                <span class="player-name">Player 1</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="player-turn" id="turn-o">
+                <span class="player-icon">O</span>
+                <span class="player-name">Player 2</span>
+            </div>
+        </div>
+
+        <div class="game-board" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <div class="game-info">
+            <p class="status-text" id="statusMessage">Player X's Turn</p>
+            <button class="restart-btn" id="restartButton">Restart Game</button>
+        </div>
+    </main>
+
+    <!-- Winning Modal -->
+    <div class="modal" id="winningModal">
+        <div class="modal-content">
+            <h2 id="winningMessage">X Wins!</h2>
+            <button class="restart-btn" id="modalRestartButton">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
